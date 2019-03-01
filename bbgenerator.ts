@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
-const chalk = require('chalk');
-const program = require('commander');
-const pj = require('./package.json');
+import chalk from 'chalk';
+import program from 'commander';
+import * as pj from './package.json';
 
-const version = pj.version;
+const version: string = (<any>pj).version;
+const description: string = (<any>pj).description;
+
 program
     .version(version)
     .usage('[options] <componentName>')
-    .description(pj.description)
+    .description(description)
     .command('component [options] [name]', 'Создает компонет')
     .command('view [options] [componentName]', 'Создает View')
     .command('collection-view [options] [componentName]', 'Создает CollectionView')
@@ -19,9 +21,9 @@ program
     .command('ui [options] [name]', 'Интерфейс для создания сущности', { isDefault: true })
     .parse(process.argv);
 
-const init = () => {
-    console.log(chalk.bold.blue('Marionette-Backbone Generator', '- v'+version));
+function init(): void {
+    console.log(chalk.bold.blue('Marionette-Backbone Generator', '- v' + version));
     console.log();
-};
+}
 
 init();

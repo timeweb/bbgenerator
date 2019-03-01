@@ -1,40 +1,47 @@
 {
-    "name": "@tw-tools/bbgenerator",
-    "version": "0.0.1",
-    "description": "Генератор структур для beckbone компонентов",
-    "main": "bbgenerator.js",
-    "module": "bbgenerator.js",
-    "bin": {
-        "bbgenerator": "./bbgenerator.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@gitlab.timeweb.net:common-libs/front-end-components.git"
-    },
-    "keywords": [
-        "js,bbgenerator,Backbone"
-    ],
-    "author": "m.guryanov (Ineigo Kira)",
-    "license": "ISC",
-    "babel": {
-        "presets": [
-            [
-                "env",
-                {
-                    "modules": "commonjs"
-                }
-            ]
-        ],
-        "plugins": [
-            "transform-class-properties",
-            "transform-object-rest-spread"
-        ]
-    },
-    "dependencies": {
-        "chalk": "^2.4.2",
-        "commander": "^2.19.0",
-        "figlet": "^1.2.1",
-        "inquirer": "^6.2.2",
-        "shelljs": "^0.8.3"
-    }
+  "name": "bbgenerator",
+  "version": "0.0.1",
+  "description": "Генератор структур для beckbone-marionette компонентов",
+  "main": "dist/bbgenerator.js",
+  "types": "dist/bbgenerator.d.ts",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.2",
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "0.0.44",
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.9.5",
+    "@types/shelljs": "^0.8.3",
+    "jest": "^24.1.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "bin": {
+    "bbgenerator": "dist/bbgenerator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ineigo/bbgenerator.git"
+  },
+  "keywords": [
+    "BAckbone",
+    "Marionette",
+    "Generator",
+    "Component"
+  ],
+  "author": "Ineigo Kira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ineigo/bbgenerator/issues"
+  },
+  "homepage": "https://github.com/Ineigo/bbgenerator#readme"
 }

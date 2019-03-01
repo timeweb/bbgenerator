@@ -1,25 +1,18 @@
-const chalk = require('chalk');
-const program = require('commander');
-const ComponentGenerator = require('./core/ComponentGenerator.js');
+import program from 'commander';
+import ComponentGenerator from './core/ComponentGenerator';
+import { Options } from './core/types';
+import { init, success } from './core/utils';
 
-const TYPE = 'Component';
+const TYPE: string = 'Component';
 
-const init = type => {
-    console.log(chalk.blue(`Start ${type} creating:`));
-};
-
-const success = ({ type, name }) => {
-    console.log(chalk.white.bgGreen.bold(`Done! ${type} created at ${name}`));
-};
-
-const run = async (entityName, options) => {
+async function run(entityName: string, options: Options): Promise<void> {
     init(TYPE);
-    const gen = new ComponentGenerator(options);
+    const gen: ComponentGenerator = new ComponentGenerator(options);
     await gen.run(entityName);
 
     console.log();
-    success(gen.parentEntity);
-};
+    success(gen.rootEntity);
+}
 
 program
     .usage('[options] <componentName>')
@@ -27,8 +20,10 @@ program
     .option('-c, --collection [name]', 'Добавить collection')
     .option('-i, --item-view [name]', 'Создать CollectionView')
     .option('-p, --path [path]', 'Путь до папки в которой создавать', process.cwd())
-    .action((file, op) => {
-        run(typeof file === 'string' ? file : undefined, {
+    .action(file => {
+        const componentName: string = typeof file === 'string' ? file : '';
+        run(componentName, {
+            name: componentName,
             model: program.model,
             collection: program.collection,
             path: program.path,
