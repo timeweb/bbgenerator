@@ -1,47 +1,50 @@
 {
-  "name": "bbgenerator",
-  "version": "0.0.1",
-  "description": "Генератор структур для beckbone-marionette компонентов",
-  "main": "dist/bbgenerator.js",
-  "types": "dist/bbgenerator.d.ts",
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.19.0",
-    "figlet": "^1.2.1",
-    "inquirer": "^6.2.2",
-    "shelljs": "^0.8.3"
-  },
-  "devDependencies": {
-    "@types/figlet": "^1.2.0",
-    "@types/inquirer": "0.0.44",
-    "@types/jest": "^24.0.9",
-    "@types/node": "^11.9.5",
-    "@types/shelljs": "^0.8.3",
-    "jest": "^24.1.0",
-    "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "tsc"
-  },
-  "bin": {
-    "bbgenerator": "dist/bbgenerator.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ineigo/bbgenerator.git"
-  },
-  "keywords": [
-    "BAckbone",
-    "Marionette",
-    "Generator",
-    "Component"
-  ],
-  "author": "Ineigo Kira",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ineigo/bbgenerator/issues"
-  },
-  "homepage": "https://github.com/Ineigo/bbgenerator#readme"
+    "name": "bbgenerator",
+    "version": "0.0.2",
+    "description": "Генератор структур для beckbone-marionette компонентов",
+    "main": "dist/bbgenerator.js",
+    "types": "dist/bbgenerator.d.ts",
+    "dependencies": {
+        "chalk": "^2.4.2",
+        "commander": "^2.19.0",
+        "figlet": "^1.2.1",
+        "inquirer": "^6.2.2",
+        "shelljs": "^0.8.3"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "devDependencies": {
+        "@types/figlet": "^1.2.0",
+        "@types/inquirer": "0.0.44",
+        "@types/jest": "^24.0.9",
+        "@types/node": "^11.9.5",
+        "@types/shelljs": "^0.8.3",
+        "jest": "^24.1.0",
+        "ts-jest": "^24.0.0",
+        "typescript": "^3.3.3333"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "tsc"
+    },
+    "bin": {
+        "bbgenerator": "dist/bbgenerator.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ineigo/bbgenerator.git"
+    },
+    "keywords": [
+        "BAckbone",
+        "Marionette",
+        "Generator",
+        "Component"
+    ],
+    "author": "Ineigo Kira",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Ineigo/bbgenerator/issues"
+    },
+    "homepage": "https://github.com/Ineigo/bbgenerator#readme"
 }

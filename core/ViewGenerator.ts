@@ -13,7 +13,6 @@ export default class ViewGenerator extends Generator {
     }
 
     async generate(): Promise<void> {
-        console.log(this.options, this.rootEntity, this.entity);
         const templateGenerator: TemplateGenerator = new TemplateGenerator(
             { ...this.options, name: this.getName() },
             this.entity
