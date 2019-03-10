@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mkdir -p ${HOME}/.npm/
+
+test -t 1 && USE_TTY="--tty"
+
+docker run --rm ${USE_TTY} --interactive \
+    --init \
+    --user $(id -u):$(id -g) \
+    -e npm_config_cache=/tmp/.npm \
+    --volume ${HOME}/.npm:/tmp/.npm \
+    --volume $(pwd):/app  \
+    --workdir /app \
+    node:10.15.3-alpine npm "$@"
+
