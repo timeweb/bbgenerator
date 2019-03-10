@@ -11,5 +11,5 @@ docker run --rm ${USE_TTY} --interactive \
     --volume ${HOME}/.npm:/tmp/.npm \
     --volume $(pwd):/app  \
     --workdir /app \
-    node:10.15.1 npm "$@"
+    node:10.15.3-alpine npm "$@"
 
